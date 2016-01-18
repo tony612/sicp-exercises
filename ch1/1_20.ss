@@ -3,7 +3,7 @@
 ; =>
 (if (= 40 0)
     206
-    (gcd 40 (redmainder 206 40)))
+    (gcd 40 (redmainder 206 40))) ; predicate will be evaluated first
 ; =>
 (gcd 40 (redmainder 206 40))
 ; =>
