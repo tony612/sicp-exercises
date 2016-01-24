@@ -1,0 +1,15 @@
+(define (same-parity base . tail)
+  (define (parity-iter base tail acc)
+    (if (null? tail)
+      (reverse acc)
+      (let ((head (car tail)))
+        (if (equal? (remainder base 2) (remainder head 2))
+          (parity-iter base (cdr tail) (cons head acc))
+          (parity-iter base (cdr tail) acc)))))
+  (parity-iter base tail (list base)))
+
+(same-parity 1 2 3 4 5 6 7)
+; => (1 3 5 7)
+
+(same-parity 2 3 4 5 6 7)
+; => (2 4 6)
